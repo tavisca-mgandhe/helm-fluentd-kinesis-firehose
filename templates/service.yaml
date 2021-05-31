@@ -11,3 +11,4 @@ metadata:
   {{- if .Values.fluentEnvs.webTdentityTokenAuthentication }}
   annotations:
     eks.amazonaws.com/role-arn: "{{ .Values.fluentEnvs.roleARN }}"
+  {{- end}}
