@@ -8,3 +8,6 @@ metadata:
     helm.sh/chart: {{ include "helm-fluentd-kinesis-firehose.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  {{- if .Values.fluentEnvs.webTdentityTokenAuthentication }}
+  annotations:
+    eks.amazonaws.com/role-arn: "{{ .Values.fluentEnvs.roleARN }}"
