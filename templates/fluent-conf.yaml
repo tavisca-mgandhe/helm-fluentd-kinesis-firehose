@@ -34,6 +34,13 @@ data:
         role_session_name "#{ENV['ROLE_SESSION_NAME']}"
       </assume_role_credentials>
   {{- end}}
+  {{- if .Values.fluentEnvs.webTdentityTokenAuthentication }}
+      <web_identity_credentials>
+        role_arn          "#{ENV['ROLE_ARN']}"
+        role_session_name "#{ENV['ROLE_SESSION_NAME']}"
+        web_identity_token_file "#{ENV['AWS_WEB_IDENTITY_TOKEN_FILE']}"
+      </web_identity_credentials>
+  {{- end}}
   {{- if .Values.fluentEnvs.instanceProfileCredentials }}
       <instance_profile_credentials>
         ip_address "#{ENV['INSTANCE_PROFILE_IP_ADDRESS']}"
