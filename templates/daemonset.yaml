@@ -22,7 +22,6 @@ spec:
         version: v1
         kubernetes.io/cluster-service: "true"
       annotations:
-        sidecar.istio.io/inject: "false"
         checksum/config: {{ include (print $.Template.BasePath "/fluent-conf.yaml") . | sha256sum }}
 {{- if .Values.podAnnotations }}
 {{ toYaml .Values.podAnnotations | indent 8 }}
