@@ -4,13 +4,14 @@
 
 image:
   repository: fluent/fluentd-kubernetes-daemonset
-  tag: v0.12-debian-kinesis
+  tag: v1.12.3-debian-kinesis-1.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
 fullnameOverride: ""
 
 fluentEnvs:
+  webTdentityTokenAuthentication: "false"
   assumeRole: false
   roleARN: ""
   roleSession: ""
