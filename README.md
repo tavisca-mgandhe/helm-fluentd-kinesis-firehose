@@ -53,6 +53,7 @@ The following table list the configurable parameters of the chart and their defa
 | nameOverride | Override the name for resources | Empty string |
 | fullnameOverride | Override the full name for resources | Empty string |
 | fluentEnvs.assumeRole | Should Fluentd assume IAM role for accessing Kinesis | false |
+| fluentEnvs.webTdentityTokenAuthentication | Should Fluentd assume IAM role using WebIdentityToken | false |
 | fluentEnvs.roleARN | AWS IAM role | Empty string |
 | fluentEnvs.roleSession | Role session | Empty string |
 | fluentEnvs.kinesisRegion | AWS region for Kinesis | eu-west-1 |
